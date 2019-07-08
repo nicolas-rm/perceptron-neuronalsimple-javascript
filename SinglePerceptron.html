@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Single Perceptron</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <script src="JS/NeuronalNetworks/SinglePerceptron.js"></script>
+    <script>
+        var teste = [{
+            inputs: [10, 100],
+            output: 0
+        }, {
+            inputs: [17, 90],
+            output: 0
+        }, {
+            inputs: [17, 40],
+            output: 0
+        }, {
+            inputs: [22, 25],
+            output: 1
+        }, {
+            inputs: [24, 30],
+            output: 1
+        }, {
+            inputs: [50, 10],
+            output: 1
+        }];
+        var neuro = new Perceptron();
+        neuro.init(0.15, 1000);
+        neuro.train(teste);
+
+        console.log(neuro.run[30, 32]);
+        // var div = document.createElement('div');
+        // div.className = 'row';
+        // div.innerHTML = neuro.run([30, 32]);
+        // document.body.appendChild(div);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
