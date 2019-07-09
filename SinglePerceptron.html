@@ -33,6 +33,8 @@ seran impresiones en la consola de desarrollo -->
 
 
     <script>
+        /* SE ENVIAN ALGUNOS VALORES PARA QUE GENERE VALORES,CON LOS CUALES SE HACEN OPERACIONES
+                 CON LOS VALORES AUTOMATIZADOS DEPENDIENDO DE LOS RANDOS */
         var teste = [{
             inputs: [10, 100],
             output: 0
@@ -52,10 +54,13 @@ seran impresiones en la consola de desarrollo -->
             inputs: [50, 10],
             output: 1
         }];
+        // SE CREA UN OBJETO DE TIPO Perceptron
         var neuro = new Perceptron();
+        // SE INICIALIZAN Y SE MANDAN ARGUMENTOS, EL VALOR DEL ERROR Y EL DE ITERACIONES
         neuro.init(0.15, 1000);
+        // SE ENVIAN LOS VALORES
         neuro.train(teste);
-
+        // SE CREA UN PAR DE OPERACIONES CON LOS NUMEROS ENVIADOS Y LOS GENERADOS
         console.log(neuro.run[30, 32]);
         // var div = document.createElement('div');
         // div.className = 'row';

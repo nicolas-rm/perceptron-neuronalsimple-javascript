@@ -5,15 +5,20 @@ this.Perceptron = function() {
     this.learnRate = 0.15;
     this.interactions = 1000;
 
+
+    // GENERA NUMEROS AL EXPONENTE 
     this.sigmoid = function(x) {
         return (1 / (1 - Math.exp(-1 * x)));
     };
 
+    // GUARDA LOS VALORES EN LAS VARIABLES GLOBALES
     this.init = function(learnRate, interactions) {
         network.learnRate = learnRate;
         network.interactions = interactions;
     };
 
+    // GENERA NUMEROS RANDOMS LOS CUALES SON GUARDADOS 
+    // PARA UTILIZARLOS MAS DESPUES
     this.initWeights = function(num) {
         bias = parseInt(Math.random() * 10);
 
@@ -22,6 +27,9 @@ this.Perceptron = function() {
         }
     };
 
+
+    // LEE UNA CANTIDAD DE DATOS GENERADOS LOS CUALES SON 
+    // LEIDOS DESPUES PARA GENERAR UN RESULTADO, EL CUAL ES EL VALOR QUE SE VA APRENDIENDO
     this.train = function(data) {
         network.initWeights(data[0].inputs.length);
         var interaction = 0;
@@ -46,12 +54,15 @@ this.Perceptron = function() {
         }
     };
 
+    /* RECALCULA EL VALOR GENERADO POR LOS NUMEROS ANTEIORMENTE GUARDADOS, 
+    TANTO LOS RANDOM COMO LOS ENVIADOS */
     this.recalcWeights = function(val, inputs) {
         for (var j = 0; j < network.weights.length; j++) {
             network.weights[j] = network.weights[j] + network.learnRate * val * inputs[j];
         }
     };
 
+    // EMPIEZA A CORRER LAS FUNCIONES, HACE UN PAR DE OPERACIONES Y GENERA UN RESULTADO
     this.run = function(inputs) {
         var sum = 0;
 
