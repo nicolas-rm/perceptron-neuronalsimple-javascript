@@ -32,7 +32,7 @@ this.Perceptron = function() {
             var difference = 0;
 
             for (var i = 0; i < data.length; i++) {
-                var result = network.run(data[i].inputs)
+                var result = network.run(data[i].inputs);
                 if (result != data[i].output) {
                     error = true;
                     difference = data[i].output - result;
@@ -42,7 +42,7 @@ this.Perceptron = function() {
                 }
             }
             console.info('Interacao: ' + interaction + ' - Erro: ' + difference.toFixed(12));
-            interaction++
+            interaction++;
         }
     };
 
